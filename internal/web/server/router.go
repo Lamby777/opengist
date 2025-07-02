@@ -114,8 +114,12 @@ func (s *Server) registerRoutes() {
 
 		r.GET("/topics/:topic", gist.AllGists, checkRequireLogin, setAllGistsMode("topics"))
 
+		r.GET("/tags", gist.AllTags, checkRequireLogin)
+
 		sC := r.SubGroup("/:user/:gistname")
 		{
+			// TODO for #450: add a way to check all tags a user has used in their gists
+
 			sC.Use(makeCheckRequireLogin(true), gistInit)
 			sC.GET("", gist.GistIndex)
 			sC.GET("/rev/:revision", gist.GistIndex)

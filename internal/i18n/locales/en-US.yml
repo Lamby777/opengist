@@ -78,6 +78,8 @@ gist.list.all-from: All gists from %s
 gist.list.topic-results-topic: All gists matching topic %s
 gist.list.topic-results: All gists matching topic
 
+gist.taglist.no-tags: No tags
+
 
 gist.search.found: gists found
 gist.search.no-results: No gists found
